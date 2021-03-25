@@ -36,7 +36,9 @@ cmd –> services.msc –>找到World Wide Web Publishing Service 右键 关闭 
    - 在本地项目或者其他vue项目中通过fecth进行接口数据调用即可。  
     
     示例：  
-    fetch("./../json/myjson.json").then(function (res) {
+    '''html
+    fetch("http://localhost:3000/json/data.json").then(function (res) {
+        console.log(res);
         if (res.ok) {
             res.json().then(function (data) {
                 console.log(data);
@@ -44,6 +46,6 @@ cmd –> services.msc –>找到World Wide Web Publishing Service 右键 关闭 
         } else {
             console.log("Looks like the response wasn't perfect, got status", res.status);
         }
-    }, function (e) {
+      }, function (e) {
         console.log("Fetch failed!", e);
-    });
+      });
